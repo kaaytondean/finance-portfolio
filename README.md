@@ -1,38 +1,35 @@
-# Bank Stress Simulator (Inspired by Silicon Valley Bank, 2023)
+# Kayton Dean | Finance Projects
 
-**Built by:** Kayton Dean  
-**Live Demo:** [kaaytondean.github.io/finance-portfolio/bank-stress-simulator](https://kaaytondean.github.io/finance-portfolio/bank-stress-simulator/)
+Independent finance and quantitative projects: valuation, credit research, market mapping, and bank risk modeling.
 
-Browser based bank simulator modeling balance sheet vulnerabilities and how they compound into liquidity crises.
+**Live site:** https://kaaytondean.github.io/finance-portfolio/
 
-## Overview
-This interactive simulator models SVB-style bank fragility. Users can adjust interest rate shocks, securities duration, securities holdings relative to equity, uninsured deposit ratios, withdrawal speed, and depositor concentration to see how risk factors compound into liquidity stress.
+| Project | What it is | Open |
+|---|---|---|
+| Bank Stress Simulator | Interactive model inspired by Silicon Valley Bank (2023) showing how rate shocks, uninsured deposits, and run speed compound into a liquidity crisis | [Live demo](https://kaaytondean.github.io/finance-portfolio/bank-stress-simulator/) · [Code](bank-stress-simulator/) |
+| BDC Research Note (Harborline ER) | Equity research note arguing OBDC's ~29% discount to NAV is overdone given the lowest non-accrual rate in a seven-BDC peer group | [PDF](bdc-research-note/Harborline_ER_BDC_Note.pdf) |
+| Sweetgreen DCF | 10-year discounted cash flow model of Sweetgreen (NYSE: SG) with bear/base/bull scenarios, two terminal value methods, sensitivity tables, and takeover premium math | [Excel model](sweetgreen-dcf/Sweetgreen_DCF.xlsx) |
+| U.S. Consumer Fintech Market Map | About 40 companies across nine segments, with FY2025 metrics for the largest public players | [Live page](https://kaaytondean.github.io/finance-portfolio/fintech-market-map/) |
 
-## Features
-- Slider-based scenario modeling with real-time stress score updates
-- SVB / Stable / High Rate Shock / Fast Digital Run presets
-- Chart showing how many points each channel (solvency, run risk, compounding) adds to the score
-- Score history chart that tracks recent changes as you move the sliders
+## Project notes
 
-## Model
-This is an educational prototype inspired by themes from my high school senior thesis on the Silicon Valley Bank collapse. It is not a regulatory model or investment tool.
+### Bank Stress Simulator
+Slider-based scenario model with presets (SVB, Stable, High Rate Shock, Digital Run), a driver breakdown chart, and stress over time. Built with HTML, CSS, JavaScript, and Chart.js. Originally published at [kaaytondean/bank-sheet-stress-simulator](https://github.com/kaaytondean/bank-sheet-stress-simulator).
 
-**Score = 35 x solvency pressure + 35 x run risk + 30 x (solvency pressure x run risk)**
+### BDC Research Note: "BDC Discounts Overdone: OBDC Priced for Credit It Doesn't Have"
+Compares ARCC, BXSL, OBDC, MAIN, FSK, TSLX, and GBDC on price to NAV versus non-accruals at fair value using SEC filings. OBDC is the primary idea, GBDC is the secondary candidate, and FSK's discount is judged appropriate. Published October 13, 2026, using Q2 2026 data. Harborline ER is a student project name, not a registered firm.
 
-- **Solvency pressure:** unrealized losses as a share of capital, estimated as duration x rate shock x (securities / equity), capped at 100%
-- **Run risk:** uninsured deposit share x (0.6 x withdrawal speed + 0.4 x depositor concentration)
-- **Compounding:** the interaction term. Large unrealized losses are survivable if depositors stay; they become fatal when depositors who can run have a reason to
+### Sweetgreen DCF
+- Revenue built from restaurant count times revenue per average restaurant
+- Stock-based compensation treated as a real expense
+- Terminal value uses NOPAT x (1+g) x (1 - g/ROIC) so growth capex isn't capitalized forever
+- Exit multiple applied to EBITDA after stock comp, consistent with treating SBC as a real cost
+- Funding check shows the opening plan is not self-funded, so the model sizes an equity raise and adds the new shares
+- Beta is Blume adjusted from the sourced raw beta; the illiquid Wonder Group preferred stake is haircut rather than counted as cash
+- Base case: about $6.35 a share on the primary EBITDA exit multiple method versus a ~$9.10 share price (October 2026); the perpetuity growth method (~$2.64) is shown as a cross-check
 
-The weights are set by judgment, not estimated from data.
+### U.S. Consumer Fintech Market Map
+Segments: neobanks, payments and P2P, BNPL, investing, crypto, credit and lending, budgeting, infrastructure, and insurtech. Includes a metrics table, a revenue comparison, and three takeaways on where the industry is heading. Data as of October 13, 2026, from company earnings releases and filings.
 
-## Tech Stack
-- HTML/CSS/JavaScript
-- Chart.js
-
-## Run Locally
-Open `index.html` in a browser, or use VS Code Live Server.
-
-## Future Work
-- Calibrate weights using bank call report data (FFIEC) and failed bank examples (SVB, Signature, First Republic)
-- Add scenario replay and exportable reports
-- Improve unrealized loss estimates with convexity and AFS versus HTM accounting
+---
+*These projects are educational and are not investment advice.*

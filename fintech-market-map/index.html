@@ -1,0 +1,133 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>U.S. Consumer Fintech Map</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: banner header, 3-col grid of segment boxes like an analyst market map, then metrics table + revenue bars */
+:root{
+  --bg:#f5f7fa; --panel:#ffffff; --ink:#14202e; --muted:#5a6878; --line:#d5dde6;
+  --band:#123a5c; --band-ink:#ffffff; --accent:#c8871c; --chip:#eef2f6; --bar:#123a5c;
+  --display:"Archivo",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e141b; --panel:#161f29; --ink:#e7edf3; --muted:#9aa8b6; --line:#2a3846;
+  --band:#1d4a72; --band-ink:#ffffff; --accent:#e3a540; --chip:#1f2a36; --bar:#5d9bd1; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e141b; --panel:#161f29; --ink:#e7edf3; --muted:#9aa8b6; --line:#2a3846;
+  --band:#1d4a72; --band-ink:#ffffff; --accent:#e3a540; --chip:#1f2a36; --bar:#5d9bd1; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:24px 48px;display:grid;gap:28px}
+header.band{background:var(--band);color:var(--band-ink);padding:22px 20px;text-align:center;border-radius:4px}
+header h1{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,3.6vw,2.3rem);letter-spacing:.04em;text-transform:uppercase;margin:0;text-wrap:balance}
+header p{margin:6px 0 0;opacity:.9}
+header .asof{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-top:6px}
+h2{font-family:var(--display);font-weight:700;font-size:1.15rem;margin:0 0 10px;letter-spacing:.01em}
+.map{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.seg{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--band);padding:12px 14px 14px;border-radius:3px;display:grid;gap:10px;align-content:start}
+.seg h3{margin:0;font-size:.82rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--chip);padding:5px 10px;border-radius:3px;font-family:var(--display);font-weight:700;font-size:.92rem}
+.chip.pub{box-shadow:inset 0 -2px 0 var(--accent)}
+.legend{font-size:.8rem;color:var(--muted);display:flex;gap:8px;align-items:center}
+.legend i{display:inline-block;width:26px;height:14px;background:var(--chip);box-shadow:inset 0 -2px 0 var(--accent);border-radius:2px}
+.legend i.sub{box-shadow:inset 0 -2px 0 var(--muted)}
+.chip.sub{box-shadow:inset 0 -2px 0 var(--muted)}
+.chip small{font-family:var(--body);font-weight:500;color:var(--muted);font-size:.75rem}
+.two{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:16px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.88rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td b{font-family:var(--display)}
+.up{color:var(--accent);font-weight:500}
+.bars{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:84px 1fr 52px;align-items:center;gap:8px;font-size:.85rem}
+.track{background:var(--chip);height:18px;border-radius:2px;overflow:hidden}
+.fill{background:var(--bar);height:100%}
+.row .v{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+.note{font-size:.78rem;color:var(--muted);margin:10px 0 0}
+.insights{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.insights .card h3{font-family:var(--display);font-size:1rem;margin:0 0 6px}
+.insights .card p{margin:0;font-size:.9rem;color:var(--ink)}
+footer{font-size:.75rem;color:var(--muted);display:grid;gap:4px}
+footer a{color:var(--muted)}
+</style>
+
+<div class="wrap">
+  <header class="band">
+    <h1>U.S. Consumer Fintech Market Map</h1>
+    <p>Key players by segment, with FY2025 metrics for the largest public companies</p>
+    <div class="asof">Data as of October 13, 2026 · Prepared by Kayton Dean</div>
+  </header>
+
+  <section>
+    <div class="map">
+      <div class="seg"><h3>Neobanks &amp; digital banking</h3><div class="chips">
+        <span class="chip pub">Chime</span><span class="chip pub">SoFi</span><span class="chip pub">Dave</span><span class="chip">Varo</span><span class="chip">Current</span><span class="chip">One</span></div></div>
+      <div class="seg"><h3>Payments &amp; P2P</h3><div class="chips">
+        <span class="chip pub">PayPal / Venmo</span><span class="chip pub">Cash App (Block)</span><span class="chip sub">Zelle <small>(bank owned)</small></span><span class="chip">Stripe</span></div></div>
+      <div class="seg"><h3>Buy now, pay later</h3><div class="chips">
+        <span class="chip pub">Affirm</span><span class="chip pub">Klarna</span><span class="chip sub">Afterpay <small>(Block)</small></span><span class="chip pub">Sezzle</span><span class="chip pub">Zip</span></div></div>
+      <div class="seg"><h3>Investing &amp; trading</h3><div class="chips">
+        <span class="chip pub">Robinhood</span><span class="chip">Public</span><span class="chip pub">Webull</span><span class="chip">Acorns</span><span class="chip">Betterment</span><span class="chip pub">Wealthfront</span></div></div>
+      <div class="seg"><h3>Crypto</h3><div class="chips">
+        <span class="chip pub">Coinbase</span><span class="chip">Kraken</span><span class="chip pub">Gemini</span></div></div>
+      <div class="seg"><h3>Credit &amp; lending</h3><div class="chips">
+        <span class="chip pub">Upstart</span><span class="chip pub">LendingClub</span><span class="chip sub">Credit Karma <small>(Intuit)</small></span><span class="chip">Mission Lane</span></div></div>
+      <div class="seg"><h3>Budgeting &amp; money management</h3><div class="chips">
+        <span class="chip">Monarch</span><span class="chip sub">Rocket Money <small>(Rocket Cos.)</small></span><span class="chip">YNAB</span><span class="chip">Copilot Money</span><span class="chip">Empower</span></div></div>
+      <div class="seg"><h3>Infrastructure &amp; banking as a service</h3><div class="chips">
+        <span class="chip">Plaid</span><span class="chip pub">Marqeta</span><span class="chip sub">Galileo <small>(SoFi)</small></span><span class="chip">Unit</span><span class="chip">Column</span></div></div>
+      <div class="seg"><h3>Insurtech</h3><div class="chips">
+        <span class="chip pub">Lemonade</span><span class="chip pub">Root</span><span class="chip pub">Hippo</span></div></div>
+    </div>
+    <p class="legend"><i></i> Publicly traded &nbsp; <i class="sub"></i> Owned by a larger company (parent in parentheses)</p>
+  </section>
+
+  <section class="two">
+    <div class="card">
+      <h2>Key players: FY2025 metrics</h2>
+      <div class="tbl"><table>
+        <thead><tr><th>Company</th><th>Segment</th><th>Revenue</th><th>YoY</th><th>Customers<sup>c</sup></th><th>Metric that matters</th></tr></thead>
+        <tbody>
+          <tr><td><b>Coinbase</b></td><td>Crypto</td><td class="n">$7.2B</td><td class="n up">+9%</td><td>n/d</td><td>Subscription &amp; services revenue $2.8B, up 23%</td></tr>
+          <tr><td><b>Robinhood</b></td><td>Investing</td><td class="n">$4.5B</td><td class="n up">+52%</td><td>27.0M funded accounts</td><td>ARPU $191; platform assets $324B</td></tr>
+          <tr><td><b>SoFi</b></td><td>Neobank</td><td class="n">$3.6B<sup>a</sup></td><td class="n up">+38%</td><td>13.7M members</td><td>Adj. EBITDA about $1.05B</td></tr>
+          <tr><td><b>Klarna</b></td><td>BNPL</td><td class="n">$3.5B</td><td class="n up">+25%</td><td>118M active consumers, global</td><td>GMV $127.9B; 966K merchants</td></tr>
+          <tr><td><b>Chime</b></td><td>Neobank</td><td class="n">$2.2B</td><td class="n up">+31%</td><td>9.5M active members</td><td>Revenue per active member $257</td></tr>
+          <tr><td><b>Affirm</b><sup>b</sup></td><td>BNPL</td><td class="n">$3.2B</td><td class="n up">+39%</td><td>23.0M active consumers</td><td>GMV $36.7B, up 38%; first net profit ($52M)</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">a. Adjusted net revenue. b. Fiscal year ending June 30, 2025, so it covers a different 12 months than the calendar year peers. c. Each company defines customers differently (funded accounts, members, active consumers), so these figures are not directly comparable. n/d = not disclosed in the sources used.</p>
+    </div>
+    <div class="card">
+      <h2>FY2025 revenue ($B)</h2>
+      <div class="bars">
+        <div class="row"><span>Coinbase</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="v">7.2</span></div>
+        <div class="row"><span>Robinhood</span><div class="track"><div class="fill" style="width:62.5%"></div></div><span class="v">4.5</span></div>
+        <div class="row"><span>SoFi</span><div class="track"><div class="fill" style="width:50%"></div></div><span class="v">3.6</span></div>
+        <div class="row"><span>Klarna</span><div class="track"><div class="fill" style="width:48.6%"></div></div><span class="v">3.5</span></div>
+        <div class="row"><span>Chime</span><div class="track"><div class="fill" style="width:30.4%"></div></div><span class="v">2.2</span></div>
+      </div>
+      <p class="note">Bars scaled to Coinbase = 100%. Affirm ($3.2B) left out because its fiscal year ends June 30.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>What the map says</h2>
+    <div class="insights">
+      <div class="card"><h3>The fight is for the primary account</h3><p>Chime and SoFi both grow by becoming where your paycheck lands. Chime added 1.5M active members in 2025, and about 40% of SoFi's product growth came from existing members.</p></div>
+      <div class="card"><h3>BNPL is turning into banking</h3><p>Klarna's banking customers doubled to 15.8M, and Affirm's card is pulling pay later into everyday spending. The segment lines on this map are starting to blur.</p></div>
+      <div class="card"><h3>Recurring revenue beats trading cycles</h3><p>Coinbase's subscription revenue grew while trading revenue barely moved. Robinhood Gold reached 4.2M subscribers. Investors reward revenue that doesn't depend on market swings.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Sources: company FY2025 earnings releases and filings for Chime, SoFi, Robinhood, Klarna, Coinbase; Affirm FY2025 10-K and proxy. Robinhood growth from its FY2025 10-K.</span>
+    <span>Segment placement reflects each company's primary product. Private companies are shown without metrics. Public status as of October 2026 (Webull listed via SPAC in 2025, Wealthfront IPO December 2025; Kraken has filed confidentially but is not yet public).</span>
+  </footer>
+</div>
+
+</body></html>
