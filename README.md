@@ -11,6 +11,7 @@ Independent finance and quantitative projects: valuation, credit research, marke
 | Sweetgreen DCF | 10-year discounted cash flow model of Sweetgreen (NYSE: SG) with bear/base/bull scenarios, two terminal value methods, sensitivity tables, and takeover premium math | [Excel model](sweetgreen-dcf/Sweetgreen_DCF.xlsx) |
 | U.S. Consumer Fintech Market Map | About 40 companies across nine segments, with FY2025 metrics for the largest public players | [Live page](https://kaaytondean.github.io/finance-portfolio/fintech-market-map/) |
 | Docebo Valuation | Three-slide valuation of Docebo (Nasdaq: DCBO) after Q3 2026: market-implied multiple, learning software peers, scenarios, and EV/EBITDA cross-check | [PDF](docebo-valuation/Docebo_Valuation.pdf) · [PowerPoint](docebo-valuation/Docebo_Valuation.pptx) |
+| U.S. ETF Market Comparison | One-page comparison of BlackRock, Vanguard, and State Street on U.S. ETF assets, share, fees, and flows (November 2026) | [PDF](etf-market-comparison/Asset_Manager_ETF_Comparison.pdf) |
 
 ## Project notes
 
@@ -40,3 +41,8 @@ Segments: neobanks, payments and P2P, BNPL, investing, crypto, credit and lendin
 
 ---
 *These projects are educational and are not investment advice.*
+
+### U.S. ETF Market Comparison
+- Sizes the U.S. ETF market at $15.2T (June 2026), up from $14.28T in February, with the top three issuers holding about 71%
+- Vanguard passed BlackRock as the largest U.S. ETF issuer in June 2026 on a 4 bps average fee versus 16 bps
+- State Street holds about 13% share, competing on SPY trading liquidity more than on fees
