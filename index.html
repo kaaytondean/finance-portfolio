@@ -4,71 +4,151 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kayton Dean | Finance Projects</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
-:root{--bg:#f5f7fa;--panel:#fff;--ink:#14202e;--muted:#5a6878;--line:#d5dde6;--band:#123a5c;--accent:#c8871c}
+:root{
+  --black:#000;--ink:#1d1d1f;--muted:#6e6e73;--line:#d2d2d7;
+  --white:#fff;--soft:#f5f5f7;
+  --green:#0a7d45;--green-hover:#086a3a;--green-bright:#30d158
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "IBM Plex Sans",system-ui,sans-serif}
-header{background:var(--band);color:#fff;padding:48px 20px 40px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-h1{font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(1.8rem,4vw,2.6rem);margin:0;letter-spacing:.01em}
-header p{margin:8px 0 0;opacity:.88;max-width:640px}
-main{padding:36px 0 56px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.card{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--band);border-radius:4px;padding:20px;display:flex;flex-direction:column;gap:10px}
-.tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
-.card h2{font-family:Archivo,sans-serif;font-size:1.2rem;margin:0}
-.card p{margin:0;color:var(--ink);font-size:.95rem;flex:1}
-.links{display:flex;gap:10px;flex-wrap:wrap}
-.links a{font-weight:600;font-size:.9rem;color:var(--band);text-decoration:none;border:1px solid var(--line);padding:6px 12px;border-radius:3px}
-.links a:hover{border-color:var(--band)}
-.links a.primary{background:var(--band);color:#fff;border-color:var(--band)}
-footer{font-size:.8rem;color:var(--muted);padding:0 0 32px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font:17px/1.47 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:48px}
+nav .brand{color:#f5f5f7;font-weight:600;font-size:.95rem;text-decoration:none;display:flex;align-items:center;gap:8px}
+nav .dot{width:8px;height:8px;border-radius:50%;background:var(--green-bright)}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:28px}
+nav ul a{color:#d2d2d7;font-size:.8rem;text-decoration:none;transition:color .2s}
+nav ul a:hover{color:#fff}
+
+/* Hero */
+.hero{background:var(--black);color:#f5f5f7;text-align:center;padding:120px 0 128px}
+.hero .eyebrow{font-size:1.05rem;color:var(--green-bright);font-weight:600;font-size:1.05rem;margin:0 0 12px}
+.hero h1{font-size:clamp(2.8rem,7vw,5rem);line-height:1.05;font-weight:700;letter-spacing:-.035em;margin:0}
+.hero p:not(.eyebrow){font-size:clamp(1.1rem,2.2vw,1.45rem);line-height:1.4;color:#a1a1a6;max-width:680px;margin:20px auto 0;font-weight:400}
+.cta{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:36px}
+.btn{display:inline-block;font-size:1rem;font-weight:500;text-decoration:none;padding:12px 24px;border-radius:980px;transition:background .2s,color .2s}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-hover)}
+.btn-ghost{color:var(--green-bright);border:1px solid var(--green-bright)}
+.btn-ghost:hover{background:var(--green-bright);color:#000}
+
+/* Stats strip */
+.stats{border-bottom:1px solid var(--line)}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;padding-top:44px;padding-bottom:44px}
+.stat strong{display:block;font-size:2.4rem;font-weight:700;letter-spacing:-.03em;color:var(--black)}
+.stat span{color:var(--muted);font-size:.9rem}
+
+/* Projects */
+.section{padding:96px 0 104px}
+.section-head{text-align:center;margin-bottom:56px}
+.section-head h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:700;letter-spacing:-.03em;margin:0;color:var(--black)}
+.section-head p{color:var(--muted);font-size:1.15rem;margin:10px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.card{background:var(--soft);border-radius:22px;padding:36px 32px 32px;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.tag{font-size:.75rem;font-weight:600;letter-spacing:.02em;color:var(--green);margin-bottom:10px}
+.card h3{font-size:1.6rem;line-height:1.15;font-weight:700;letter-spacing:-.025em;margin:0 0 12px;color:var(--black)}
+.card p{margin:0 0 24px;color:var(--ink);font-size:1rem;flex:1}
+.links{display:flex;gap:22px;flex-wrap:wrap}
+.links a{color:var(--green);font-weight:500;font-size:1rem;text-decoration:none}
+.links a::after{content:" ›";font-size:1.15em}
+.links a:hover{text-decoration:underline}
+.card.dark{background:var(--black)}
+.card.dark h3{color:#f5f5f7}
+.card.dark p{color:#a1a1a6}
+.card.dark .tag,.card.dark .links a{color:var(--green-bright)}
+
+/* Footer */
+footer{background:var(--soft);color:var(--muted);font-size:.8rem;padding:28px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+footer a{color:var(--ink);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media (max-width:640px){
+  nav ul{gap:18px}
+  .hero{padding:88px 0 96px}
+  .stats .wrap{grid-template-columns:1fr;gap:24px}
+  .section{padding:72px 0}
+  .card{padding:30px 24px 26px}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap">
-  <h1>Kayton Dean</h1>
-  <p>Finance and quantitative projects: equity valuation, credit research, market mapping, and bank risk modeling. Goizueta BBA + Quantitative Sciences, Emory University.</p>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="dot"></span>Kayton Dean</a>
+  <ul>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="https://github.com/kaaytondean">GitHub</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <p class="eyebrow">Finance &amp; Quantitative Projects</p>
+  <h1>Kayton Dean.</h1>
+  <p>Equity valuation, credit research, market mapping, and bank risk modeling. Goizueta BBA + Quantitative Sciences, Emory University.</p>
+  <div class="cta">
+    <a class="btn btn-green" href="#projects">View projects</a>
+    <a class="btn btn-ghost" href="https://github.com/kaaytondean/finance-portfolio">See the code</a>
+  </div>
 </div></header>
-<main><div class="wrap grid">
-  <article class="card">
-    <span class="tag">Risk modeling · JavaScript</span>
-    <h2>Bank Stress Simulator</h2>
-    <p>Interactive model inspired by the 2023 Silicon Valley Bank collapse. Adjust rate shocks, uninsured deposits, securities duration, and withdrawal speed to see how balance sheet risks build into a liquidity crisis.</p>
-    <div class="links"><a class="primary" href="bank-stress-simulator/">Open simulator</a><a href="https://github.com/kaaytondean/finance-portfolio/tree/main/bank-stress-simulator">Code</a></div>
-  </article>
-  <article class="card">
-    <span class="tag">Equity research · Private credit</span>
-    <h2>BDC Discounts Overdone: OBDC</h2>
-    <p>Research note comparing seven business development companies on price to NAV versus non-accruals. Argues OBDC's discount is overdone given its low non-accruals at fair value, with GBDC as a secondary idea.</p>
-    <div class="links"><a class="primary" href="bdc-research-note/Harborline_ER_BDC_Note.pdf">Read the note (PDF)</a></div>
-  </article>
-  <article class="card">
-    <span class="tag">Valuation · Excel</span>
-    <h2>Sweetgreen DCF</h2>
-    <p>10-year discounted cash flow model of Sweetgreen (NYSE: SG) built from restaurant count and unit economics, with bear, base, and bull scenarios, two terminal value methods, sensitivity tables, and takeover premium math.</p>
-    <div class="links"><a class="primary" href="sweetgreen-dcf/Sweetgreen_DCF.xlsx">Download model</a></div>
-  </article>
-  <article class="card">
-    <span class="tag">Market mapping · Fintech</span>
-    <h2>U.S. Consumer Fintech Market Map</h2>
-    <p>About 40 companies across nine segments, with FY2025 metrics for the largest public players and takeaways on where the industry is consolidating.</p>
-    <div class="links"><a class="primary" href="fintech-market-map/">Open map</a></div>
-  </article>
-  <article class="card">
-    <span class="tag">Equity valuation · Software</span>
-    <h2>Docebo Valuation</h2>
-    <p>Valuation of Docebo (Nasdaq: DCBO) after Q3 2026 results. Compares what the share price implies against learning software peers, with growth and multiple scenarios, an equity bridge that accounts for the $60M special dividend, and an EV/EBITDA cross-check.</p>
-    <div class="links"><a class="primary" href="docebo-valuation/Docebo_Valuation.pdf">View deck (PDF)</a><a href="docebo-valuation/Docebo_Valuation.pptx">PowerPoint</a></div>
-  </article>
-  <article class="card">
-    <span class="tag">Industry research · Asset management</span>
-    <h2>U.S. ETF Market Comparison</h2>
-    <p>One-page competitive comparison of BlackRock, Vanguard, and State Street (November 2026): U.S. ETF market sizing at $15.2T, market share, fees, and flows, with takeaways on how fee pressure is reshaping the index business.</p>
-    <div class="links"><a class="primary" href="etf-market-comparison/Asset_Manager_ETF_Comparison.pdf">View one-pager (PDF)</a></div>
-  </article>
+
+<main class="section" id="projects"><div class="wrap">
+  <div class="section-head">
+    <h2>The work.</h2>
+    <p>Models, notes, and tools built from public filings and market data.</p>
+  </div>
+  <div class="grid">
+    <article class="card dark">
+      <span class="tag">Risk modeling · JavaScript</span>
+      <h3>Bank Stress Simulator</h3>
+      <p>Interactive model inspired by the 2023 Silicon Valley Bank collapse. Adjust rate shocks, uninsured deposits, securities duration, and withdrawal speed to see how balance sheet risks build into a liquidity crisis.</p>
+      <div class="links"><a href="bank-stress-simulator/">Open simulator</a><a href="https://github.com/kaaytondean/finance-portfolio/tree/main/bank-stress-simulator">Code</a></div>
+    </article>
+    <article class="card">
+      <span class="tag">Equity valuation · Software</span>
+      <h3>Docebo Valuation</h3>
+      <p>Valuation of Docebo (Nasdaq: DCBO) after Q3 2026 results. Compares what the share price implies against learning software peers, with growth and multiple scenarios, an equity bridge that accounts for the $60M special dividend, and an EV/EBITDA cross check.</p>
+      <div class="links"><a href="docebo-valuation/Docebo_Valuation.pdf">View deck</a><a href="docebo-valuation/Docebo_Valuation.pptx">PowerPoint</a></div>
+    </article>
+    <article class="card">
+      <span class="tag">Equity research · Private credit</span>
+      <h3>BDC Discounts Overdone: OBDC</h3>
+      <p>Research note comparing seven business development companies on price to NAV versus non-accruals. Argues OBDC's discount is overdone given its low non-accruals at fair value, with GBDC as a secondary idea.</p>
+      <div class="links"><a href="bdc-research-note/Harborline_ER_BDC_Note.pdf">Read the note</a></div>
+    </article>
+    <article class="card">
+      <span class="tag">Valuation · Excel</span>
+      <h3>Sweetgreen DCF</h3>
+      <p>10 year discounted cash flow model of Sweetgreen (NYSE: SG) built from restaurant count and unit economics, with bear, base, and bull scenarios, two terminal value methods, sensitivity tables, and takeover premium math.</p>
+      <div class="links"><a href="sweetgreen-dcf/Sweetgreen_DCF.xlsx">Download model</a></div>
+    </article>
+    <article class="card">
+      <span class="tag">Industry research · Asset management</span>
+      <h3>U.S. ETF Market Comparison</h3>
+      <p>One page competitive comparison of BlackRock, Vanguard, and State Street (November 2026): U.S. ETF market sizing at $15.2T, market share, fees, and flows, with takeaways on how fee pressure is reshaping the index business.</p>
+      <div class="links"><a href="etf-market-comparison/Asset_Manager_ETF_Comparison.pdf">View one pager</a></div>
+    </article>
+    <article class="card dark">
+      <span class="tag">Market mapping · Fintech</span>
+      <h3>U.S. Consumer Fintech Market Map</h3>
+      <p>About 40 companies across nine segments, with FY2025 metrics for the largest public players and takeaways on where the industry is consolidating.</p>
+      <div class="links"><a href="fintech-market-map/">Open map</a></div>
+    </article>
+  </div>
 </div></main>
-<footer><div class="wrap">Educational projects. Not investment advice.</div></footer>
+
+<footer><div class="wrap">
+  <span>Educational projects. Not investment advice.</span>
+  <span>© 2026 Kayton Dean · <a href="https://github.com/kaaytondean">GitHub</a></span>
+</div></footer>
+
 </body>
 </html>
