@@ -12,6 +12,7 @@ Independent finance and quantitative projects: valuation, credit research, marke
 | U.S. Consumer Fintech Market Map | About 40 companies across nine segments, with FY2025 metrics for the largest public players | [Live page](https://kaaytondean.github.io/finance-portfolio/fintech-market-map/) |
 | Docebo Valuation | Three-slide valuation of Docebo (Nasdaq: DCBO) after Q3 2026: market-implied multiple, learning software peers, scenarios, and EV/EBITDA cross-check | [PDF](docebo-valuation/Docebo_Valuation.pdf) · [PowerPoint](docebo-valuation/Docebo_Valuation.pptx) |
 | U.S. ETF Market Comparison | One-page comparison of BlackRock, Vanguard, and State Street on U.S. ETF assets, share, fees, and flows (November 2026) | [PDF](etf-market-comparison/Asset_Manager_ETF_Comparison.pdf) |
+| Medtech M&A Precedent Transactions | Comps of eight medtech takeovers (2024 to 2026) showing how revenue growth drives EV/Revenue multiples and how private equity prices differently | [PDF](medtech-ma-comps/Medtech_MA_Comps.pdf) · [Excel](medtech-ma-comps/Medtech_MA_Comps.xlsx) · [PowerPoint](medtech-ma-comps/Medtech_MA_Comps.pptx) |
 
 ## Project notes
 
@@ -38,6 +39,13 @@ Compares ARCC, BXSL, OBDC, MAIN, FSK, TSLX, and GBDC on price to NAV versus non-
 
 ### U.S. Consumer Fintech Market Map
 Segments: neobanks, payments and P2P, BNPL, investing, crypto, credit and lending, budgeting, infrastructure, and insurtech. Includes a metrics table, a revenue comparison, and three takeaways on where the industry is heading. Data as of October 13, 2026, from company earnings releases and filings.
+
+### Medtech M&A Precedent Transactions
+- Eight public medtech takeovers announced 2024 to 2026: J&J/Shockwave, Boston Scientific/Axonics, Silk Road and Penumbra, Stryker/Inari, Zimmer Biomet/Paragon 28, Danaher/Masimo, and AIP/Avanos
+- Strategic median of 8.1x EV/revenue and a 23% premium; targets growing 20%+ sold for a median 9.3x versus 6.2x for slower growers
+- Growth and multiple correlate at 0.86 across strategic deals (0.51 excluding Shockwave)
+- Private equity check: AIP paid 1.8x revenue but 14.7x adjusted EBITDA for Avanos
+- Excel workbook keeps sourced inputs in blue and formulas in black; data from company releases and filings as of November 2026
 
 ---
 *These projects are educational and are not investment advice.*
