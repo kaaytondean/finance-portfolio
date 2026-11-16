@@ -13,6 +13,7 @@ Independent finance and quantitative projects: valuation, credit research, marke
 | Docebo Valuation | Three-slide valuation of Docebo (Nasdaq: DCBO) after Q3 2026: market-implied multiple, learning software peers, scenarios, and EV/EBITDA cross-check | [PDF](docebo-valuation/Docebo_Valuation.pdf) · [PowerPoint](docebo-valuation/Docebo_Valuation.pptx) |
 | U.S. ETF Market Comparison | One-page comparison of BlackRock, Vanguard, and State Street on U.S. ETF assets, share, fees, and flows (November 2026) | [PDF](etf-market-comparison/Asset_Manager_ETF_Comparison.pdf) |
 | Medtech M&A Precedent Transactions | Comps of eight medtech takeovers (2024 to 2026) showing how revenue growth drives EV/Revenue multiples and how private equity prices differently | [PDF](medtech-ma-comps/Medtech_MA_Comps.pdf) · [Excel](medtech-ma-comps/Medtech_MA_Comps.xlsx) · [PowerPoint](medtech-ma-comps/Medtech_MA_Comps.pptx) |
+| Bond ETF Discounts to NAV (March 2020) | Market structure note on why bond ETFs like LQD, BND, and AGG traded 4% to 19% below NAV in March 2020 and how the Fed backstop closed the gap | [PDF](bond-etf-discounts/Bond_ETF_Discounts_March_2020.pdf) |
 
 ## Project notes
 
@@ -46,6 +47,11 @@ Segments: neobanks, payments and P2P, BNPL, investing, crypto, credit and lendin
 - Growth and multiple correlate at 0.86 across strategic deals (0.51 excluding Shockwave)
 - Private equity check: AIP paid 1.8x revenue but 14.7x adjusted EBITDA for Avanos
 - Excel workbook keeps sourced inputs in blue and formulas in black; data from company releases and filings as of November 2026
+
+### Bond ETF Discounts to NAV (March 2020)
+- LQD traded up to 5% below NAV in the week to March 20, 2020, then closed at a 3.2% premium by March 26 after the Fed's SMCCF announcement
+- Bond ETFs closing at a 5%+ discount fell from 37 to six in under a week
+- Argues the ETF price was the live price of credit risk while NAV was stale, since only about 20% of corporate bonds trade daily
 
 ---
 *These projects are educational and are not investment advice.*
