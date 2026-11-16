@@ -10,7 +10,7 @@ Independent finance and quantitative projects: valuation, credit research, marke
 | BDC Research Note (Harborline ER) | Equity research note arguing OBDC's ~29% discount to NAV is overdone given the lowest non-accrual rate in a seven-BDC peer group | [PDF](bdc-research-note/Harborline_ER_BDC_Note.pdf) |
 | Sweetgreen DCF | 10-year discounted cash flow model of Sweetgreen (NYSE: SG) with bear/base/bull scenarios, two terminal value methods, sensitivity tables, and takeover premium math | [Excel model](sweetgreen-dcf/Sweetgreen_DCF.xlsx) |
 | U.S. Consumer Fintech Market Map | About 40 companies across nine segments, with FY2025 metrics for the largest public players | [Live page](https://kaaytondean.github.io/finance-portfolio/fintech-market-map/) |
-| Docebo Valuation | Three-slide valuation of Docebo (Nasdaq: DCBO) after Q3 2026: market-implied multiple, learning software peers, scenarios, and EV/EBITDA cross-check | [PDF](docebo-valuation/Docebo_Valuation.pdf) · [PowerPoint](docebo-valuation/Docebo_Valuation.pptx) |
+| Docebo Valuation | Three-slide valuation of Docebo (Nasdaq: DCBO) after Q3 2026: market-implied multiple, learning software peers, scenarios, and EV/EBITDA cross-check | [PDF](docebo-valuation/Docebo_Valuation.pdf) · [PowerPoint](docebo-valuation/Docebo_Valuation.pptx) · [Paper LBO (Excel)](docebo-valuation/Docebo_Paper_LBO.xlsx) |
 | U.S. ETF Market Comparison | One-page comparison of BlackRock, Vanguard, and State Street on U.S. ETF assets, share, fees, and flows (November 2026) | [PDF](etf-market-comparison/Asset_Manager_ETF_Comparison.pdf) |
 | Medtech M&A Precedent Transactions | Comps of eight medtech takeovers (2024 to 2026) showing how revenue growth drives EV/Revenue multiples and how private equity prices differently | [PDF](medtech-ma-comps/Medtech_MA_Comps.pdf) · [Excel](medtech-ma-comps/Medtech_MA_Comps.xlsx) · [PowerPoint](medtech-ma-comps/Medtech_MA_Comps.pptx) |
 | Bond ETF Discounts to NAV (March 2020) | Market structure note on why bond ETFs like LQD, BND, and AGG traded 4% to 19% below NAV in March 2020 and how the Fed backstop closed the gap | [PDF](bond-etf-discounts/Bond_ETF_Discounts_March_2020.pdf) |
@@ -37,6 +37,7 @@ Compares ARCC, BXSL, OBDC, MAIN, FSK, TSLX, and GBDC on price to NAV versus non-
 - FY2027 scenarios: 8%, 11% and 14% revenue growth at 2.0x, 2.65x (current market multiple) and 3.5x EV/revenue
 - Net debt includes the $60M special dividend payable November 30, 2026
 - Learning software peers (D2L, Skillsoft, Coursera) trade near 1x revenue on flat to single-digit growth
+- Paper LBO: $1.0B take-private at a 30% premium (14.5x FY2027E EBITDA), 6.0x leverage, 11% growth and margins from 23% to 30% give a 3.4x MOIC and 28% IRR over five years; about 83% of the equity gain comes from EBITDA growth
 
 ### U.S. Consumer Fintech Market Map
 Segments: neobanks, payments and P2P, BNPL, investing, crypto, credit and lending, budgeting, infrastructure, and insurtech. Includes a metrics table, a revenue comparison, and three takeaways on where the industry is heading. Data as of October 13, 2026, from company earnings releases and filings.
