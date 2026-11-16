@@ -14,6 +14,7 @@ Independent finance and quantitative projects: valuation, credit research, marke
 | U.S. ETF Market Comparison | One-page comparison of BlackRock, Vanguard, and State Street on U.S. ETF assets, share, fees, and flows (November 2026) | [PDF](etf-market-comparison/Asset_Manager_ETF_Comparison.pdf) |
 | Medtech M&A Precedent Transactions | Comps of eight medtech takeovers (2024 to 2026) showing how revenue growth drives EV/Revenue multiples and how private equity prices differently | [PDF](medtech-ma-comps/Medtech_MA_Comps.pdf) · [Excel](medtech-ma-comps/Medtech_MA_Comps.xlsx) · [PowerPoint](medtech-ma-comps/Medtech_MA_Comps.pptx) |
 | Bond ETF Discounts to NAV (March 2020) | Market structure note on why bond ETFs like LQD, BND, and AGG traded 4% to 19% below NAV in March 2020 and how the Fed backstop closed the gap | [PDF](bond-etf-discounts/Bond_ETF_Discounts_March_2020.pdf) |
+| Roadmap: AI for Private Credit | VC-style market map of 12 AI startups across the private credit workflow (underwriting, research, facility infrastructure, monitoring) with an investment thesis | [PDF](ai-private-credit-roadmap/AI_Private_Credit_Roadmap.pdf) |
 
 ## Project notes
 
@@ -53,6 +54,11 @@ Segments: neobanks, payments and P2P, BNPL, investing, crypto, credit and lendin
 - LQD traded up to 5% below NAV in the week to March 20, 2020, then closed at a 3.2% premium by March 26 after the Fed's SMCCF announcement
 - Bond ETFs closing at a 5%+ discount fell from 37 to six in under a week
 - Argues the ETF price was the live price of credit risk while NAV was stale, since only about 20% of corporate bonds trade daily
+
+### Roadmap: AI for Private Credit
+- Maps 12 startups from Series A to growth stage, including Rogo, Hebbia, Taktile, Setpoint, Cardo AI, 73 Strings, and Chronograph
+- Facility and asset-based finance infrastructure raised $63M across its latest rounds versus $220M to $334M in other segments
+- Thesis: the winner will own loan-level data inside the workflow, not just a model on top of documents
 
 ---
 *These projects are educational and are not investment advice.*
